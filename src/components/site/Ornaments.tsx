@@ -14,13 +14,19 @@ export function BotanicalBranch({ className }: { className?: string }) {
       strokeWidth="0.9"
     >
       <path d="M100 320V20" strokeLinecap="round" />
-      {Array.from({ length: 9 }).map((_, i) => {
-        const y = 40 + i * 30;
-        const s = 1 - i * 0.07;
+      {Array.from({ length: 8 }).map((_, i) => {
+        const y = 46 + i * 34;
+        const s = 1 - i * 0.08;
+        const w = 52 * s;
+        const h = 22 * s;
         return (
           <g key={i}>
-            <path d={`M100 ${y} C ${100 - 46 * s} ${y - 6}, ${100 - 58 * s} ${y + 20}, 100 ${y + 26}`} />
-            <path d={`M100 ${y + 12} C ${100 + 46 * s} ${y + 6}, ${100 + 58 * s} ${y + 32}, 100 ${y + 38}`} />
+            <path
+              d={`M100 ${y} C ${100 - w * 0.5} ${y - h * 0.55}, ${100 - w} ${y + h * 0.2}, ${100 - w * 0.15} ${y + h} C ${100 - w * 0.35} ${y + h * 0.45}, ${100 - w * 0.2} ${y + h * 0.2}, 100 ${y}`}
+            />
+            <path
+              d={`M100 ${y + 17} C ${100 + w * 0.5} ${y + 17 - h * 0.55}, ${100 + w} ${y + 17 + h * 0.2}, ${100 + w * 0.15} ${y + 17 + h} C ${100 + w * 0.35} ${y + 17 + h * 0.45}, ${100 + w * 0.2} ${y + 17 + h * 0.2}, 100 ${y + 17}`}
+            />
           </g>
         );
       })}
