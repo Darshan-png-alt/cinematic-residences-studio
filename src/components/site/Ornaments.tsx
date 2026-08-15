@@ -35,7 +35,7 @@ export function BotanicalBranch({ className }: { className?: string }) {
   );
 }
 
-export function ArchArc({ className }: { className?: string }) {
+export function ArchArc({ className, draw }: { className?: string; draw?: boolean }) {
   return (
     <svg
       viewBox="0 0 400 400"
@@ -45,8 +45,14 @@ export function ArchArc({ className }: { className?: string }) {
       stroke="currentColor"
       strokeWidth="0.8"
     >
-      <circle cx="200" cy="200" r="199" />
-      <circle cx="200" cy="200" r="150" />
+      <circle cx="200" cy="200" r="199" pathLength={1} className={draw ? "line-draw" : undefined} />
+      <circle
+        cx="200"
+        cy="200"
+        r="150"
+        pathLength={1}
+        className={draw ? "line-draw [animation-delay:600ms]" : undefined}
+      />
       <circle cx="200" cy="200" r="96" strokeDasharray="2 8" />
       <path d="M40 200h320M200 40v320" strokeDasharray="2 10" />
     </svg>

@@ -239,3 +239,25 @@
     transform: translateY(360%);
   }
 }
+
+/* Slow line-art draw for hero ornaments */
+@keyframes linedraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.line-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: linedraw 3.6s var(--ease-cine) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
