@@ -185,12 +185,12 @@ export function Hero() {
           client's transparent building render when supplied. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-30 hidden h-[46svh] translate-y-[38%] overflow-hidden md:block"
-        style={{ opacity: Math.max(0, qe * 1.2 - 0.25) * 0.9 }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-30 hidden h-[34svh] translate-y-[62%] overflow-hidden md:block"
+        style={{ opacity: Math.max(0, qe * 1.2 - 0.35) * 0.42 }}
       >
         <div
-          className="h-[200%] w-full [mask-image:radial-gradient(70%_78%_at_50%_18%,black_35%,transparent_82%)] [-webkit-mask-image:radial-gradient(70%_78%_at_50%_18%,black_35%,transparent_82%)]"
-          style={{ transform: `translate3d(0, ${-14 + qe * 8}%, 0)` }}
+          className="h-[200%] w-full [mask-image:radial-gradient(58%_58%_at_52%_8%,black_20%,transparent_78%)] [-webkit-mask-image:radial-gradient(58%_58%_at_52%_8%,black_20%,transparent_78%)]"
+          style={{ transform: `translate3d(0, ${-18 + qe * 8}%, 0)` }}
         >
           <img
             src={heroTower}
