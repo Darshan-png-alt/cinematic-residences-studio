@@ -6,7 +6,7 @@ import { concept } from "@/content/project";
 export function ConceptSection() {
   return (
     <Section id="concept">
-      <BotanicalBranch className="pointer-events-none absolute -left-10 top-24 h-[70%] text-clay/25" />
+      <BotanicalBranch className="pointer-events-none absolute -left-10 top-24 h-[70%] scale-y-[-1] text-clay/25" />
       <SectionHeading eyebrow={concept.eyebrow} heading={concept.heading} index="01" className="ml-auto md:w-2/3" />
 
       <Reveal delay={160} className="ml-auto mt-20 md:w-2/3">

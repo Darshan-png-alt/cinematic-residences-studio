@@ -4,8 +4,8 @@
  */
 
 export const project = {
-  name: "MARAYA",
-  nameParts: ["MAR", "AYA"],
+  name: "STHITHA",
+  nameParts: ["STHI", "THA"],
   tagline: "Residences in dialogue with light",
   descriptor: "A conceptual residential development",
   location: "District 00 — Placeholder City",

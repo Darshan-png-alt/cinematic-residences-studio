@@ -11,7 +11,7 @@ import { ResidencesSection } from "@/components/sections/ResidencesSection";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { EnquirySection } from "@/components/sections/EnquirySection";
 
-const title = "Maraya — Residences in dialogue with light";
+const title = "STHITHA — Residences in dialogue with light";
 const description =
   "A conceptual residential development: architecture, landscape and residences presented as one cinematic architectural narrative.";
 

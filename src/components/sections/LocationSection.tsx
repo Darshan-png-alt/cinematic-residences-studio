@@ -19,7 +19,7 @@ export function LocationSection() {
             <Reveal key={p.label} delay={i * 120}>
               <div className="flex items-baseline gap-6 border-b border-ink-foreground/15 py-5">
                 <span className="font-display text-4xl text-clay">{p.time}</span>
-                <span className="text-sm text-ink-foreground/65">{p.label}</span>
+                <span className="text-base text-ink-foreground/85">{p.label}</span>
               </div>
             </Reveal>
           ))}

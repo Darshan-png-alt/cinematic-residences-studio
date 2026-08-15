@@ -15,7 +15,7 @@ export function EnquirySection() {
         <div className="lg:col-span-5">
           <Reveal>
             <span className="eyebrow text-clay">{enquiry.eyebrow}</span>
-            <h2 className="display-xl mt-8 text-[clamp(2rem,4.4vw,3.5rem)]">{enquiry.heading}</h2>
+            <h2 className="display-xl mt-8 text-[clamp(2.5rem,5.6vw,4.75rem)]">{enquiry.heading}</h2>
             <p className="mt-6 max-w-sm leading-relaxed text-muted-foreground">{enquiry.body}</p>
           </Reveal>
           <Reveal delay={160}>

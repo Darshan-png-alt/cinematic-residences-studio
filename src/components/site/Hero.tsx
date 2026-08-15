@@ -106,7 +106,6 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 will-change-transform"
           style={{ transform: `translate3d(0, ${qe * 16}%, 0)`, opacity: 1 - qe * 0.85 }}
         >
-          <BotanicalBranch className="absolute -left-6 bottom-0 hidden h-[52vh] text-ink-foreground/25 md:block" />
           <BotanicalBranch className="absolute -right-6 bottom-0 hidden h-[38vh] scale-x-[-1] text-ink-foreground/20 md:block" />
         </div>
 
@@ -131,7 +130,8 @@ export function Hero() {
           </div>
 
           <h1
-            className="display-xl mt-8 text-[clamp(3.5rem,15vw,13rem)] tracking-[0.12em]"
+            className="display-xl mt-8 text-[clamp(3.75rem,16.5vw,14.25rem)] tracking-[0.12em] text-ink-foreground"
+            style={{ textShadow: "0 2px 40px oklch(0.19 0.01 70 / 0.55)" }}
             aria-label={project.name}
           >
             {project.name.split("").map((ch, i) => (

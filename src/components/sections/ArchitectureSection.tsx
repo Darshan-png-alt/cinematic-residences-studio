@@ -34,8 +34,9 @@ export function ArchitectureSection() {
               loading="lazy"
               width={1200}
               height={1504}
-              className="aspect-[4/5] w-full object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04]"
+              className="aspect-[4/5] w-full object-cover saturate-[0.32] contrast-[1.16] brightness-[1.06] transition-transform duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.04]"
             />
+            <div className="pointer-events-none absolute inset-0 mix-blend-color bg-[#8a92a0]/35" />
           </figure>
           <div className="absolute -bottom-8 -right-4 hidden bg-background px-8 py-6 shadow-[var(--shadow-lift)] md:block">
             <span className="eyebrow">Facade study</span>
