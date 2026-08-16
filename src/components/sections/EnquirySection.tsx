@@ -40,7 +40,7 @@ export function EnquirySection() {
               { id: "phone", label: "Telephone", type: "tel" },
             ].map((f) => (
               <div key={f.id}>
-                <label htmlFor={f.id} className="eyebrow">
+                <label htmlFor={f.id} className="eyebrow" style={{ fontSize: "0.8125rem" }}>
                   {f.label}
                 </label>
                 <input
@@ -53,7 +53,7 @@ export function EnquirySection() {
               </div>
             ))}
             <div>
-              <label htmlFor="message" className="eyebrow">
+              <label htmlFor="message" className="eyebrow" style={{ fontSize: "0.8125rem" }}>
                 Message
               </label>
               <textarea
