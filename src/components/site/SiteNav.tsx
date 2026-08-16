@@ -4,16 +4,16 @@ import { cn } from "@/lib/utils";
 import { LogoMark } from "./Ornaments";
 import { nav, project } from "@/content/project";
 
-export function SiteNav() {
-  const [scrolled, setScrolled] = useState(false);
+export function SiteNav({ solid = false }: { solid?: boolean }) {
+  const [scrolled, setScrolled] = useState(solid);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(solid || window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solid]);
 
   return (
     <header
@@ -37,7 +37,7 @@ export function SiteNav() {
           <span className="font-display text-lg tracking-[0.4em]">{project.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
           {nav.map((item) => {
             const className = cn(
               "eyebrow relative py-1 transition-colors duration-500 hover:text-clay",

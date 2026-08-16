@@ -28,7 +28,7 @@ export const Route = createFileRoute("/amenities")({
 function AmenitiesPage() {
   return (
     <main className="bg-background">
-      <SiteNav />
+      <SiteNav solid />
 
       {/* Opening */}
       <Section className="pt-40 md:pt-56">
