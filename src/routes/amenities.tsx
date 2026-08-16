@@ -73,7 +73,7 @@ function AmenitiesPage() {
               <Reveal
                 key={item.title}
                 delay={(i % 3) * 110}
-                className={item.feature ? "sm:col-span-2" : undefined}
+                className={item.feature ? "sm:col-span-2" : ""}
               >
                 <article className="group">
                   <div className="overflow-hidden">
