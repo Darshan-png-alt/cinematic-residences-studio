@@ -14,13 +14,14 @@ export const project = {
   email: "enquiries@placeholder.com",
 };
 
-export const nav = [
+export const nav: { label: string; href: string; to?: string }[] = [
   { label: "Concept", href: "#concept" },
   { label: "Architecture", href: "#architecture" },
   { label: "Lifestyle", href: "#lifestyle" },
   { label: "Landscape", href: "#landscape" },
   { label: "Masterplan", href: "#masterplan" },
   { label: "Residences", href: "#residences" },
+  { label: "Amenities", href: "/amenities", to: "/amenities" },
   { label: "Location", href: "#location" },
 ];
 
