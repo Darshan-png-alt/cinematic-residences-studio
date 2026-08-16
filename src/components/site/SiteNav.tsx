@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "./Ornaments";
 import { nav, project } from "@/content/project";
 
-export function SiteNav() {
-  const [scrolled, setScrolled] = useState(false);
+export function SiteNav({ solid = false }: { solid?: boolean }) {
+  const [scrolled, setScrolled] = useState(solid);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(solid || window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solid]);
 
   return (
     <header
@@ -24,8 +25,9 @@ export function SiteNav() {
       )}
     >
       <div className="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-10">
-        <a
-          href="#top"
+        <Link
+          to="/"
+          hash="top"
           className={cn(
             "flex items-center gap-3 transition-colors duration-700",
             scrolled ? "text-foreground" : "text-ink-foreground",
@@ -33,23 +35,32 @@ export function SiteNav() {
         >
           <LogoMark className="h-7 w-7" />
           <span className="font-display text-lg tracking-[0.4em]">{project.name}</span>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "eyebrow relative py-1 transition-colors duration-500 hover:text-clay",
-                scrolled ? "text-muted-foreground" : "text-ink-foreground/70",
-              )}
-            >
-              {item.label}
-            </a>
-          ))}
-          <a
-            href="#enquiry"
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
+          {nav.map((item) => {
+            const className = cn(
+              "eyebrow relative py-1 transition-colors duration-500 hover:text-clay",
+              scrolled ? "text-muted-foreground" : "text-ink-foreground/70",
+            );
+            return item.to ? (
+              <Link key={item.href} to={item.to} className={className}>
+                {item.label}
+              </Link>
+            ) : (
+              <Link
+                key={item.href}
+                to="/"
+                hash={item.href.replace("#", "")}
+                className={className}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <Link
+            to="/"
+            hash="enquiry"
             className={cn(
               "eyebrow border px-5 py-2.5 transition-colors duration-500",
               scrolled
@@ -58,7 +69,7 @@ export function SiteNav() {
             )}
           >
             Enquire
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -93,16 +104,28 @@ export function SiteNav() {
         )}
       >
         <div className="flex flex-col gap-5 px-6 py-8">
-          {[...nav, { label: "Enquire", href: "#enquiry" }].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="eyebrow text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
+          {[...nav, { label: "Enquire", href: "#enquiry" }].map((item) =>
+            "to" in item && item.to ? (
+              <Link
+                key={item.href}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className="eyebrow text-foreground"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <Link
+                key={item.href}
+                to="/"
+                hash={item.href.replace("#", "")}
+                onClick={() => setOpen(false)}
+                className="eyebrow text-foreground"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </header>
