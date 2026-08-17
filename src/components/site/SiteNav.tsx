@@ -37,7 +37,7 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
           <span className="font-display text-lg tracking-[0.4em]">{project.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
+        <nav className="hidden items-center gap-6 xl:flex xl:gap-8">
           {nav.map((item) => {
             const className = cn(
               "eyebrow relative py-1 transition-colors duration-500 hover:text-clay",
@@ -78,7 +78,7 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className={cn(
-            "flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden",
+            "flex h-9 w-9 flex-col items-center justify-center gap-1.5 xl:hidden",
             scrolled ? "text-foreground" : "text-ink-foreground",
           )}
         >
@@ -99,7 +99,7 @@ export function SiteNav({ solid = false }: { solid?: boolean }) {
 
       <div
         className={cn(
-          "overflow-hidden bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-700 lg:hidden",
+          "overflow-hidden bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-700 xl:hidden",
           open ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
